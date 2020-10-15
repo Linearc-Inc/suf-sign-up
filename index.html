@@ -13,7 +13,7 @@
         <div class="tab">
             <div class="tab-wrapper">
                 <ul class="tab-header">
-                    <li class="tab-header-item active">Personal Information</li>
+                    <li class="tab-header-item">Personal Information</li>
                     <li class="tab-header-item">Background Information</li>
                 </ul>
     
@@ -47,19 +47,25 @@
                             <!-- row date of birth -->
                             <div class="form-group">
                                 <div class="form-group-inline">
-                                    <div><label for="">Gender</label></div>
-                                    <div class="form-group-inline">
-                                        <input type="radio">
-                                        <label for="">Male</label>
+                                  <div class="form-group column">
+                                    <label for="">Gender</label>
+                                    <div class="form-group full-width">
+                                        <div class="form-group" >
+                                            <span><input type="radio"></span>
+                                            <label for="">Male</label>
+                                        </div>
+                                        <div class="form-group" >
+                                           <span> <input type="radio"></span>
+                                            <label for="">Female</label>
+                                        </div>
                                     </div>
-                                    <div class="form-group-inline">
-                                        <input type="radio">
-                                        <label for="">Female</label>
-                                    </div>
+                                  </div>
                                 </div>
                                 <div class="form-group-inline">
-                                    <div><label for="">Date of Birth</label></div>
-                                    <input type="date">
+                                    <div class="form-group column">
+                                        <label for="">Date of Birth</label>
+                                        <div class="form-group full-width"><input type="date"></div>
+                                    </div>
                                 </div>
     
                             </div>
@@ -69,23 +75,74 @@
                             </div>
                         </div>
                     </li>
-                    <li class="tab-body-item">
+                    <li class="tab-body-item active">
     
                         <div class="container">
                             <label for="">Higest Level Attained</label>
                             <div class="form-group">
-                                <select name="" id="">
-                                    <option value="other">Other</option>
-                                </select>
-                                <input type="text" placeholder="If other fill it here">
+                                <div class="form-group-inline">
+                                    <select name="" id="">
+                                        <option value="other">PLE</option>
+                                        <option value="other">UCE</option>
+                                        <option value="other">UACE</option>
+                                        <option value="other">DIPLOMA</option>
+                                        <option value="other">DIPLOMA</option>
+                                        <option value="other">DIPLOMA</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                               <div class="form-group-inline">
+                                <input disabled type="text" placeholder="If other fill it here">
+                               </div>
                                 <div class="form-group">
-                                    <input type="checkbox" name="" id="">
+                                    <span><input type="checkbox" name="" id=""></span>
                                     <label for="">Still in school</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <span><input type="checkbox" name="" id=""></span>
+                                    <label for="">Employed or working?</label>
+                                </div>
+                               
+                                <div class="form-group">
+                                    <input type="text" disabled placeholder="Occupation">
+                                   </div>
+                            </div>
+
+                            <div class="form-group column">
+                                <label for="">Please rate your computer knowledge.</label>
+                                <div class="form-group column">
+                                    <div class="form-group full-width">
+                                        <span><input type="checkbox" name="" id=""></span>
+                                        <label for="">I don't know anything</label>
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <span><input type="checkbox" name="" id=""></span>
+                                        <label for="">I can switch it on, off and use a mouse?</label>
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <span><input type="checkbox" name="" id=""></span>
+                                        <label for="">I can use Internet and email, computers, word processing</label>
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <span><input type="checkbox" name="" id=""></span>
+                                        <label for="">I can use multimedia, and spreadsheets and databases</label>
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <span><input type="checkbox" name="" id=""></span>
+                                        <label for="">I can do programming and scripting.</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
     
     
+                    </li>
+
+                    <li class="tab-body-item active">
+
                     </li>
                 </ul>
     
@@ -93,8 +150,18 @@
                     <button>previous</button>
                     <button>next</button>
                 </div>
+
+                <div class="success">
+                    <p>Thank you for submitting. Record has been saved</p>
+                </div>
+            </div>
+
+            <div class="share">
+                my social media buttons
             </div>
         </div>
+        
+
     </section>
 </body>
 
