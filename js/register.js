@@ -15,14 +15,31 @@ document.addEventListener("DOMContentLoaded", function (e) {
     next_btn.addEventListener('click',(e)=>go_to_page(++page_number))
 
     prev_btn.addEventListener('click',(e)=>go_to_page(--page_number))
+    
+    //form event listeners
+    document.getElementById('education_level').addEventListener('change',function (event) {
+        var value=event.target.value;
+        var education =document.getElementById('other_education_level');
+        if(value==="other"){
+            education.disabled=false;
+        }else{
+            education.value="";                        
+            education.disabled=true;            
+        }
+    })
 
+
+
+    //Creating tabbed menu 
     headings.forEach((heading ,index)=>{
         heading.addEventListener('click',(e)=>{
            page_number=index+1
-           console.log(page_number)
            go_to_page(page_number)
         })
     })
+
+
+
     function go_to_page(page){
         headings.forEach(function (heading) {
             heading.classList.remove('active')     
@@ -41,9 +58,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         } catch (error) {
             console.log("error resolved")
         }
-
     }
 
 
 });
-
