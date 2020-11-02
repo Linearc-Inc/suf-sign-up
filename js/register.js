@@ -12,8 +12,13 @@ document.addEventListener("DOMContentLoaded", function (e) {
     prev_btn.style.display="none"
 
 
-    next_btn.addEventListener('click',(e)=>go_to_page(++page_number))
-
+    next_btn.addEventListener('click',function (e){
+        if(this.innerHTML=="Submit"){
+           var form1=document.querySelector("#registration-form-1")
+           var form2=document.querySelector("#registration-form-2")
+        }
+        go_to_page(++page_number)
+    });
     prev_btn.addEventListener('click',(e)=>go_to_page(--page_number))
     
     //form event listeners
@@ -30,14 +35,15 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 
 
-    //Creating tabbed menu 
-    headings.forEach((heading ,index)=>{
-        heading.addEventListener('click',(e)=>{
-           page_number=index+1
-           go_to_page(page_number)
-        })
-    })
-
+    // //Creating tabbed menu 
+    // headings.forEach((heading ,index)=>{
+    //     heading.addEventListener('click',(e)=>{
+    //        if((index+1)!=pages.length){
+    //         page_number=index+1
+    //         go_to_page(page_number)
+    //        }
+    //     })
+    // })
 
 
     function go_to_page(page){
@@ -47,11 +53,25 @@ document.addEventListener("DOMContentLoaded", function (e) {
         pages.forEach(function (page) {
             page.classList.remove('active')     
         })
-        if(page>1){
-            prev_btn.style.display="inline-block";
-        }else{
+
+        if(page<=1 || page==pages.length){
             prev_btn.style.display="none";
+        }else{
+            prev_btn.style.display="inline-block";
         }
+
+        if(page==pages.length-1){
+            next_btn.innerHTML="Submit"
+        }else{
+            next_btn.style.display="inline-block";
+            next_btn.innerHTML="Next"
+        }
+
+        if(page==pages.length){
+            next_btn.style.display="none";
+        }
+
+
         try {
             headings[page-1].classList.add('active')
             pages[page-1].classList.add('active')
