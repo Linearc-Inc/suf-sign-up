@@ -16,8 +16,35 @@ document.addEventListener("DOMContentLoaded", function (e) {
         if(this.innerHTML=="Submit"){
            var form1=document.querySelector("#registration-form-1")
            var form2=document.querySelector("#registration-form-2")
+       //Subminting to the server       
+           //    $.ajax({
+        //     url: document.querySelector('#registration-form').dataset.url ,
+        //     type:"post",
+        //     data: {
+        //       action:'register_champion',
+        //       email:form1['email'].value,
+        //       first_name:form1['first_name'].value,
+        //       last_name:form1['last_name'].value,
+        //       phone_number:form1['phone_code'].value+form1['phone_number'].value,
+        //       gender:form1['gender'].value,
+        //       date_of_birth:form1['date_of_birth'].value,
+        //       physical_address:form1['physical_address'].value,
+        //       education_level:(form2['education_level'].value=='other')?form2['other_education_level'].value:form2['education_level'].value,
+        //       in_school:form2['in_school'].checked?"yes":"no",
+        //       working:form2['working'].checked?"yes":"no",
+        //       occupation:form2['occupation'].value,
+        //       computer_skills:form2['computer_skills'].value,
+        //     },
+        //     error:function (response) {
+        //         console.log(response) 
+        //     },
+        //     success:function (response) {
+        //         console.log(response)
+        //     }
+        //     });
         }
         go_to_page(++page_number)
+
     });
     prev_btn.addEventListener('click',(e)=>go_to_page(--page_number))
     
@@ -33,7 +60,13 @@ document.addEventListener("DOMContentLoaded", function (e) {
         }
     })
 
-
+    document.getElementById('working').addEventListener('change',function (e){
+        if(this.checked){
+            document.getElementById('occupation').disabled=false
+        }else{
+            document.getElementById('occupation').disabled=true
+        }
+    })
 
     // //Creating tabbed menu 
     // headings.forEach((heading ,index)=>{
